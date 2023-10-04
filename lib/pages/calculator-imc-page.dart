@@ -18,17 +18,6 @@ class _CalculatorImcPageState extends State<CalculatorImcPage> {
   var imcs = <Imc>[];
 
   @override
-  void initState() {
-    // TODO: implement initState
-    getImcs();
-    super.initState();
-  }
-
-  getImcs() {
-    imcs.add(Imc(80, 1.80));
-  }
-
-  @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
@@ -137,7 +126,7 @@ class _CalculatorImcPageState extends State<CalculatorImcPage> {
               const SizedBox(
                 height: 15,
               ),
-              CustomCard(imc: imcs.last),
+              imcs.isNotEmpty ? CustomCard(imc: imcs.last) : const SizedBox(),
             ],
           ),
         ),
